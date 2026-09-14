@@ -5,7 +5,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/elamparithita2024-cloud/open.git'
+                git branch: 'main',
+                    url: 'https://github.com/elamparithita2024-cloud/open.git'
             }
         }
 
@@ -19,7 +20,7 @@ pipeline {
 
         stage('Run Linter') {
             steps {
-                bat 'flake8 app.py'
+                bat 'python -m flake8 app.py'
             }
         }
     }
